@@ -225,7 +225,9 @@ function updatePreview() {
 
 async function copyHtml() {
   const html = generateReportHTML()
-  const text = html.replace(/<[^>]+>/g, '')
+  const parser = new DOMParser()
+  const doc = parser.parseFromString(html, 'text/html')
+  const text = doc.body ? doc.body.textContent || '' : ''
   try {
     if (navigator.clipboard && window.ClipboardItem) {
       const item = new ClipboardItem({
