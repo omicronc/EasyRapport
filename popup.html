@@ -1,0 +1,65 @@
+<!--
+  EasyRapport - Chrome extension for task-based report generation.
+  Copyright (C) 2026 EasyRapport
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EasyRapport</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">EasyRapport</div>
+    <div class="subtitle">Extension Chrome</div>
+  </header>
+  <section class="meta">
+    <div class="field">
+      <label for="reportTitle">Titre du rapport</label>
+      <input id="reportTitle" type="text" placeholder="Intervention du 14/02/2026" spellcheck="true">
+    </div>
+    <div class="field">
+      <label for="reportDate">Date</label>
+      <input id="reportDate" type="date">
+    </div>
+    <div class="field">
+      <label for="reportAuthor">Auteur</label>
+      <input id="reportAuthor" type="text" placeholder="Votre nom" spellcheck="true">
+    </div>
+  </section>
+  <section class="tasks">
+    <div class="tasks-header">
+      <div>Liste des tâches</div>
+      <button id="addTaskBtn" class="primary">Ajouter une tâche</button>
+    </div>
+    <div id="tasksContainer"></div>
+  </section>
+  <section class="actions">
+    <button id="generateBtn" class="secondary">Générer l’aperçu</button>
+    <button id="copyBtn" class="primary">Copier HTML pour Gmail</button>
+    <button id="resetBtn" class="secondary danger">Réinitialiser</button>
+  </section>
+  <section class="preview">
+    <div class="preview-title">Aperçu du rapport</div>
+    <div id="preview" class="preview-area"></div>
+  </section>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
